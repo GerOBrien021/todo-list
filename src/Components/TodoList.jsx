@@ -13,6 +13,15 @@ const TodoList = () => {
         }
     };
 
+    const handleDeleteTodo = (index) => {
+        // Create a shallow copy of the current todos array
+        const newTodos = [...todos];
+        // Remove the todo at the specified index
+        newTodos.splice(index, 1);
+        // Update the state with the new array (without the deleted todo)
+        setTodos(newTodos);
+    };
+
     // Function to handle adding a new list item to a specific todo heading
     const handleAddList = (index) => {
         // Check if the input for the given index is not empty or just whitespace
